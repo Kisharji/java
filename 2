@@ -1,0 +1,32 @@
+import java.util.Scanner; class Process {
+int arrivalTime; int burstTime;
+}
+
+public class FCFS {
+public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+System.out.print(&quot;Enter the number of processes: &quot;); int
+numProcesses = scanner.nextInt();
+Process[] processes = new Process[numProcesses]; for (int i =
+0; i &lt; numProcesses; i++) {
+System.out.println(&quot;Enter details for process &quot; + (i + 1) + &quot;:&quot;);
+System.out.print(&quot;Arrival Time: &quot;);
+
+int arrivalTime = scanner.nextInt(); System.out.print(&quot;Burst
+Time: &quot;); int burstTime = scanner.nextInt(); processes[i] = new
+Process();
+processes[i].arrivalTime = arrivalTime; processes[i].burstTime =
+burstTime;
+}
+
+System.out.println(&quot;\nFCFS Scheduling:&quot;);
+System.out.println(&quot;Process\tArrival Time\tBurst Time&quot;);
+
+for (int i = 0; i &lt; numProcesses; i++) {
+System.out.println((i + 1) + &quot;\t\t&quot; + processes[i].arrivalTime +
+&quot;\t\t\t&quot; + processes[i].burstTime);
+}
+
+scanner.close();
+}
+}
